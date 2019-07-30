@@ -16,7 +16,7 @@ app.use(session({
    secret: SESSION_SECRET
 }))
 app.use(middleware.user)
-
+app.use(express.static(`${__dirname}/../build`))
 app.get('/api/swag', swagCtrl.read)
 app.post('/api/register', authCtrl.register)
 app.post('/api/login', authCtrl.login)
